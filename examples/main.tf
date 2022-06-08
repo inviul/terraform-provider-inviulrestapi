@@ -2,7 +2,7 @@ terraform {
   required_providers {
     inviulrestapi = {
       version = "0.1"
-      source  = "inviul/terraform/inviulrestapi"
+      source  = "inviul/inviulrestapi"
     }
   }
 }
@@ -10,10 +10,10 @@ terraform {
 provider "inviulrestapi" {}
 
 data "inviulrestapi" "myFirstRestCall" {
-  base_uri = "https://azure:32oejceu6jqqcfra5tfmgdelrlrfwaslmolnx27ig65emoeu4wkq@dev.azure.com/msci-otw/analytics-apps/_apis/pipelines/pipelinepermissions?"
-  path = "api-version=7.1-preview.1"
+  base_uri = "https://username:password@dev.test.com?"
+  path = "trailpath"
   http_rest_method = "PATCH"
-  json_payload = "[{\"resource\":{\"type\":\"endpoint\",\"id\":\"3536788c-a807-4a60-ab0a-cc1cd475fc19\",\"name\":\"Default\"},\"pipelines\":[{\"id\":13894,\"authorized\":true}]}]"
+  json_payload = "[{\"key\":\"value\"}]
 }
 
 locals {
