@@ -1,4 +1,4 @@
-module terraform-provider-inviulrestapi
+module github.com/inviul/terraform-provider-inviulrestapi
 
 go 1.18
 

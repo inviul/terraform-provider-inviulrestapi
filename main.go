@@ -1,9 +1,9 @@
 package main
 
 import (
-    "github.com/inviul/terraform-provider-inviulrestapi/inviulrestapi"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
+	"github.com/inviul/terraform-provider-inviulrestapi/inviulrestapi"
 )
 
 // Generate the Terraform provider documentation using `tfplugindocs`:
