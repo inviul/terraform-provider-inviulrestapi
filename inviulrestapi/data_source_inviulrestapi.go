@@ -6,6 +6,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"strconv"
 	"time"
@@ -76,12 +77,20 @@ func dataSourceRestCallRead(ctx context.Context, d *schema.ResourceData, m inter
 	}
 	defer r.Body.Close()
 
-	rest_out, err := ioutil.ReadAll(r.Body)
+	resp, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		return diag.FromErr(err)
 	}
 
-	if err := d.Set("rest_out", rest_out); err != nil {
+	if resp == nil {
+		bt := []byte("{ \"data\" : \"No output\"}")
+		resp = []byte(bytes.NewBuffer(bt).String())
+	}
+
+	sb := string(resp)
+	log.Printf(sb)
+
+	if err := d.Set("rest_out", sb); err != nil {
 		return diag.FromErr(err)
 	}
 
