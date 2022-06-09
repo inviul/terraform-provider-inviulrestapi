@@ -3,9 +3,9 @@ package inviulrestapi
 import (
 	"bytes"
 	"context"
-	"encoding/json"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+	"io/ioutil"
 	"net/http"
 	"strconv"
 	"time"
@@ -76,8 +76,7 @@ func dataSourceRestCallRead(ctx context.Context, d *schema.ResourceData, m inter
 	}
 	defer r.Body.Close()
 
-	rest_out := make([]map[string]interface{}, 0)
-	err = json.NewDecoder(r.Body).Decode(&rest_out)
+	rest_out, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		return diag.FromErr(err)
 	}
