@@ -57,8 +57,8 @@ func dataSourceRestCallRead(ctx context.Context, d *schema.ResourceData, m inter
 	http_rest_method := d.Get("http_rest_method").(string)
 
 	if http_rest_method != "GET" {
-		jsonPayload := d.Get("json_payload").(string)
-		postBody := []byte(jsonPayload)
+		var jsonPayload = d.Get("json_payload").(string)
+		var postBody = []byte(jsonPayload)
 		payloadBody := bytes.NewBuffer(postBody)
 		req, err = http.NewRequest(http_rest_method, base_uri+path, payloadBody)
 		req.Header.Set("Content-Type", "application/json")
