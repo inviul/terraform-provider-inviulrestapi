@@ -9,7 +9,7 @@ terraform {
 
 provider "inviulrestapi" {}
 
-data "inviulrestapi" "myFirstRestCall" {
+data "inviulrestapi_datasource" "myFirstRestCall" {
   base_uri = "https://username:password@dev.test.com?"
   path = "trailpath"
   http_rest_method = "PATCH"
@@ -20,6 +20,6 @@ data "inviulrestapi" "myFirstRestCall" {
 
 # Returns Output
 output "myRestCallOutput" {
-  value = data.inviulrestapi.myFirstRestCall.rest_out
+  value = data.inviulrestapi_datasource.myFirstRestCall.rest_out
 }
 
