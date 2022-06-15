@@ -1,8 +1,13 @@
 module github.com/inviul/terraform-provider-inviulrestapi
 
+//module terraform-provider-inviulrestapi
+
 go 1.18
 
-require github.com/hashicorp/terraform-plugin-sdk/v2 v2.17.0
+require (
+	github.com/hashicorp/terraform-plugin-docs v0.9.0
+	github.com/hashicorp/terraform-plugin-sdk/v2 v2.17.0
+)
 
 require (
 	github.com/Masterminds/goutils v1.1.1 // indirect
@@ -30,7 +35,6 @@ require (
 	github.com/hashicorp/logutils v1.0.0 // indirect
 	github.com/hashicorp/terraform-exec v0.16.1 // indirect
 	github.com/hashicorp/terraform-json v0.14.0 // indirect
-	github.com/hashicorp/terraform-plugin-docs v0.9.0 // indirect
 	github.com/hashicorp/terraform-plugin-go v0.9.1 // indirect
 	github.com/hashicorp/terraform-plugin-log v0.4.0 // indirect
 	github.com/hashicorp/terraform-registry-address v0.0.0-20210412075316-9b2996cce896 // indirect
@@ -56,11 +60,13 @@ require (
 	github.com/vmihailenco/tagparser v0.1.1 // indirect
 	github.com/zclconf/go-cty v1.10.0 // indirect
 	golang.org/x/crypto v0.0.0-20220525230936-793ad666bf5e // indirect
-	golang.org/x/net v0.0.0-20211112202133-69e39bad7dc2 // indirect
-	golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a // indirect
+	golang.org/x/net v0.0.0-20220614195744-fb05da6f9022 // indirect
+	golang.org/x/sys v0.0.0-20220614162138-6c1b26c55098 // indirect
 	golang.org/x/text v0.3.7 // indirect
 	google.golang.org/appengine v1.6.6 // indirect
-	google.golang.org/genproto v0.0.0-20200711021454-869866162049 // indirect
-	google.golang.org/grpc v1.46.0 // indirect
+	google.golang.org/genproto v0.0.0-20220614165028-45ed7f3ff16e // indirect
+	google.golang.org/grpc v1.47.0 // indirect
 	google.golang.org/protobuf v1.28.0 // indirect
 )
+
+replace google.golang.org/grpc => github.com/grpc/grpc-go v1.47.0

@@ -7,9 +7,11 @@ import (
 // Provider -
 func Provider() *schema.Provider {
 	return &schema.Provider{
-		ResourcesMap: map[string]*schema.Resource{},
+		ResourcesMap: map[string]*schema.Resource{
+			"inviulrestapi_resource": resourceRestCall(),
+		},
 		DataSourcesMap: map[string]*schema.Resource{
-			"inviulrestapi": dataSourceRestCall(),
+			"inviulrestapi_datasource": dataSourceRestCall(),
 		},
 	}
 }
