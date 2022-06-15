@@ -20,6 +20,6 @@ resource "inviulrestapi_resource" "myFirstRestCall_r" {
 
 # Returns Output
 output "myRestCallOutput" {
-  value = inviulrestapi_resourcee.myFirstRestCall_r.rest_out
+  value = inviulrestapi_resource.myFirstRestCall_r.rest_out
 }
 
