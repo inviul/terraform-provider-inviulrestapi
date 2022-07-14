@@ -1,6 +1,6 @@
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/inviul/terraform-provider-inviulrestapi/release)
 ![GitHub](https://img.shields.io/github/license/inviul/terraform-provider-inviulrestapi)
-# Overview - inviulrestapi
+# Restful API provider for Terraform - inviulrestapi
 This is custom terraform provider to make REST API call with json payload. It simply make REST calls like GET, POST, PULL, DELETE, PATCH
 
 ## Sample Implementation
